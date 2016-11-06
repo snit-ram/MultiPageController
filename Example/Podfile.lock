@@ -1,0 +1,16 @@
+PODS:
+  - MultiPageController (0.1.0)
+
+DEPENDENCIES:
+  - MultiPageController (from `../`)
+
+EXTERNAL SOURCES:
+  MultiPageController:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  MultiPageController: 50f19bd354a6e9f10fb00c021e6896e1367fc9a7
+
+PODFILE CHECKSUM: d4da42bbbcf6beff1a427ff80d337f35a50a5cfd
+
+COCOAPODS: 1.0.1
