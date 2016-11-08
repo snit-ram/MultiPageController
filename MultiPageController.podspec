@@ -16,6 +16,8 @@ An item gets automatically selected if the user stop scrolling, or the user can 
   s.source           = { :git => 'https://github.com/snit-ram/MultiPageController.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '9.0'
-
   s.source_files = 'MultiPageController/Source/**/*'
+
+  s.pod_target_xcconfig =  { 'SWIFT_VERSION' => '3.0' }
+  s.user_target_xcconfig = { 'SWIFT_VERSION' => '3.0' }
 end

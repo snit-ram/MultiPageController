@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  MultiPageController: 50f19bd354a6e9f10fb00c021e6896e1367fc9a7
+  MultiPageController: 64144cb40be545fac6165325323b1ff73b10fa8e
 
 PODFILE CHECKSUM: d4da42bbbcf6beff1a427ff80d337f35a50a5cfd
 
