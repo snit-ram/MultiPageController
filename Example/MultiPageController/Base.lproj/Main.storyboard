@@ -26,10 +26,10 @@
             </objects>
             <point key="canvasLocation" x="254" y="139"/>
         </scene>
-        <!--View Controller-->
+        <!--Content View Controller-->
         <scene sceneID="Bcv-hk-BNh">
             <objects>
-                <viewController storyboardIdentifier="ContentVC" id="Us5-0q-fe1" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ContentVC" id="Us5-0q-fe1" customClass="ContentViewController" customModule="MultiPageController_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1Fm-ke-GeZ"/>
                         <viewControllerLayoutGuide type="bottom" id="k2O-Qz-Sdo"/>
@@ -56,6 +56,9 @@
                             <constraint firstItem="4GW-hm-Gcs" firstAttribute="centerX" secondItem="Wip-cE-gEK" secondAttribute="centerX" id="rjU-OW-feB"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="label" destination="JeC-0V-FaB" id="ft7-b6-BJP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JXX-Yd-FPi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

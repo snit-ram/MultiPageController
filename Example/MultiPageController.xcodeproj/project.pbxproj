@@ -13,6 +13,7 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		89CEE3749E990D271247A922 /* Pods_MultiPageController_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1E05D85F6FF4CE21714C0FF /* Pods_MultiPageController_Example.framework */; };
+		EA7779431DD1A57A00D51F21 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7779421DD1A57A00D51F21 /* ContentViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		C360FFEEA954CDB86805D63F /* MultiPageController.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = MultiPageController.podspec; path = ../MultiPageController.podspec; sourceTree = "<group>"; };
 		CB68B22DD1856F2993606808 /* Pods-MultiPageController_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MultiPageController_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-MultiPageController_Example/Pods-MultiPageController_Example.release.xcconfig"; sourceTree = "<group>"; };
 		D3D8740870CE8E0CCD6F3146 /* Pods-MultiPageController_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MultiPageController_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MultiPageController_Tests/Pods-MultiPageController_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		EA7779421DD1A57A00D51F21 /* ContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 		FBF9439904EE0E3D57DFD7D1 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -79,6 +81,7 @@
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
+				EA7779421DD1A57A00D51F21 /* ContentViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -242,6 +245,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				EA7779431DD1A57A00D51F21 /* ContentViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

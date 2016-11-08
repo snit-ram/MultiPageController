@@ -31,7 +31,8 @@ extension ViewController : MultiPageControllerDataSource {
     }
     
     func multiPageController(_ multiPageController: MultiPageController, viewControllerAt index: Int) -> UIViewController {
-        let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ContentVC")
+        let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ContentVC") as! ContentViewController
+        viewController.text = "ViewController \(index)"
         return viewController
     }
 }
