@@ -38,22 +38,25 @@ multipageController.reloadData()
 ```
 
 ### MultiPageControllerDataSource Methods
-```swift
-func numberOfItems(in: MultiPageController) -> Int
-```
-Returns the number of items to be presented when scrolling
 
 ```swift
+/*
+* Returns the number of items to be presented when scrolling
+*/
+func numberOfItems(in: MultiPageController) -> Int
+
+/*
+* Returns a view to be used as preview of the item the user can select. 
+* This is called only once per element.
+*/
+func multiPageController(_ multiPageController: MultiPageController, viewControllerAt index: Int) -> UIViewController
+
+/* 
+* Returns the view controller to be presented when the user taps selects an element. 
+* This is called once the user first selects the element at the specified index
+*/
 func multiPageController(_ multiPageController: MultiPageController, previewViewAt index: Int) -> UIView
 ```
-Returns a view to be used as preview of the item the user can select. This is called only once per element.
-
-
-```swift
-func multiPageController(_ multiPageController: MultiPageController, viewControllerAt index: Int) -> UIViewController
-```
-Returns the view controller to be presented when the user taps selects an element. This is called once the user first selects the element at the specified index.
-
 
 ## Author
 
