@@ -4,11 +4,21 @@
 [![License](https://img.shields.io/cocoapods/l/MultiPageController.svg?style=flat)](http://cocoapods.org/pods/MultiPageController)
 [![Platform](https://img.shields.io/cocoapods/p/MultiPageController.svg?style=flat)](http://cocoapods.org/pods/MultiPageController)
 
+Component inspired by UIPageController that allows fast navigation by scrolling to switch to a different ViewController.
+ViewControllers are lazily instantiated the first time it gets activated.
+
+An item gets automatically selected if the user stop scrolling, or the user can tap an element o select it.
+
+![MultiPageViewController Image](http://i.makeagif.com/media/11-08-2016/_mrVVK.gif)
+
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 ## Requirements
+
+* iOS >= 9.0
+* Swift 3.0
 
 ## Installation
 
@@ -18,6 +28,32 @@ it, simply add the following line to your Podfile:
 ```ruby
 pod "MultiPageController"
 ```
+
+## Usage
+Set the MultipageController's datasource and reload it's data:
+```swift
+let multipageController = MultipageController()
+multipageController.dataSource = self
+multipageController.reloadData()
+```
+
+### MultiPageControllerDataSource Methods
+```swift
+func numberOfItems(in: MultiPageController) -> Int
+```
+Returns the number of items to be presented when scrolling
+
+```swift
+func multiPageController(_ multiPageController: MultiPageController, previewViewAt index: Int) -> UIView
+```
+Returns a view to be used as preview of the item the user can select. This is called only once per element.
+
+
+```swift
+func multiPageController(_ multiPageController: MultiPageController, viewControllerAt index: Int) -> UIViewController
+```
+Returns the view controller to be presented when the user taps selects an element. This is called once the user first selects the element at the specified index.
+
 
 ## Author
 
