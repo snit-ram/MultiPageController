@@ -124,7 +124,7 @@ open class MultiPageController: UIViewController {
         let maxDistance = view.bounds.width / 2
         let size = itemSize
         let frame = CGRect(
-            origin: CGPoint(x: itemSize.width / 2 + itemSize.width * CGFloat(index), y: view.bounds.height / 2 - size.height / 2),
+            origin: CGPoint(x: itemSize.width / 2 + itemSize.width * CGFloat(index), y: view.bounds.midY - size.height / 2),
             size: size
         )
         
@@ -218,16 +218,13 @@ open class MultiPageController: UIViewController {
     }
     
     func apply(attributes: LayoutAttributes, to view: UIView){
-        if view.frame != attributes.frame {
-            view.frame = attributes.frame
-        }
         view.alpha = attributes.alpha
         view.layer.transform = attributes.transform3D
         view.isHidden = attributes.isHidden
     }
     
     func applyTransform(_ index: Int){
-        apply(attributes: self.layoutAttributes(forIndex: index), to: previewViews[index])
+        apply(attributes: layoutAttributes(forIndex: index), to: previewViews[index])
     }
     
     func applyContainerTransform(_ index: Int){
@@ -270,7 +267,7 @@ open class MultiPageController: UIViewController {
     
     func transformVisibleItems(){
         let midItem = max(Int(floor((scrollView.contentOffset.x + itemSize.width / 2) / itemSize.width)), 0)
-        let affectedRange = max(midItem - 1, 0)..<min(midItem + 2, previewViews.count)
+        let affectedRange = max(midItem - 1, 0)..<min(midItem + 2, itemCount)
         
         affectedRange.forEach(applyTransform)
         previewViews.indices.forEach(applyContainerTransform)
@@ -279,11 +276,25 @@ open class MultiPageController: UIViewController {
     override open func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         scrollView.frame = view.bounds
-        scrollView.contentSize = CGSize(width: (itemSize.width) * CGFloat(itemCount + 1), height: view.bounds.height)
+        scrollView.contentSize = contentSize
+        scrollView.setContentOffset(contentOffset(for: viewControllerIndex), animated: false)
+        
+        previewViews.enumerated().forEach { (index, view) in
+            let attributes = layoutAttributes(forIndex: index)
+            view.layer.transform = CATransform3DIdentity
+            view.frame = attributes.frame
+            view.center = attributes.frame.center
+        }
+        
+        containerViews.enumerated().forEach { (index, view) in
+            let attributes = containerLayoutAttributes(forIndex: index)
+            view.layer.transform = CATransform3DIdentity
+            view.frame = attributes.frame
+            view.center = attributes.frame.center
+        }
+        
         previewViews.indices.forEach(applyTransform)
-        previewViews.indices.forEach(applyContainerTransform)
-        scrollView.contentOffset = CGPoint(x: CGFloat(viewControllerIndex) * itemSize.width, y: 0)
-        state = .expanded
+        containerViews.indices.forEach(applyContainerTransform)
     }
     
     var timer: Timer?
