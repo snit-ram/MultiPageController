@@ -293,8 +293,8 @@ open class MultiPageController: UIViewController {
         return contentSize(in: view.bounds)
     }
     
-    override open func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
+    override open func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
         scrollView.frame = view.bounds
         scrollView.contentSize = contentSize
         scrollView.setContentOffset(contentOffset(for: viewControllerIndex), animated: false)
