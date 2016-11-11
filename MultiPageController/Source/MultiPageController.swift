@@ -205,7 +205,6 @@ open class MultiPageController: UIViewController {
             
             let containerView = UIView()
             containerView.backgroundColor = .white
-            containerView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
             containerViews.append(containerView)
             
             scrollView.addSubview(previewView)
