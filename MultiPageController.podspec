@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'MultiPageController'
-  s.version          = '0.2.0'
+  s.version          = '0.2.1'
   s.summary          = 'UIPageController-like component that allows fast navigation by horizontal scrolling'
 
 
