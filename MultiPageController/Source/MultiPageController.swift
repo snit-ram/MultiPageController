@@ -102,7 +102,11 @@ open class MultiPageController: UIViewController {
     }
     
     var itemSize : CGSize {
-        let side = view.bounds.width / 2
+        return itemSize(in: view.bounds)
+    }
+
+    func itemSize(in containerRect: CGRect) -> CGSize {
+        let side = containerRect.width / 2
         return CGSize(width: side, height: side)
     }
     
@@ -271,6 +275,22 @@ open class MultiPageController: UIViewController {
         
         affectedRange.forEach(applyTransform)
         previewViews.indices.forEach(applyContainerTransform)
+    }
+    
+    func contentOffset(for index: Int, in containerRect: CGRect) -> CGPoint {
+        return CGPoint(x: CGFloat(index) * itemSize(in: containerRect).width, y: 0)
+    }
+    
+    func contentOffset(for index: Int) -> CGPoint {
+        return contentOffset(for: index, in: view.bounds)
+    }
+    
+    func contentSize(in containerRect: CGRect) -> CGSize {
+        return CGSize(width: (itemSize(in: containerRect).width) * CGFloat(itemCount + 1), height: containerRect.height)
+    }
+    
+    var contentSize : CGSize {
+        return contentSize(in: view.bounds)
     }
     
     override open func viewDidLayoutSubviews() {
