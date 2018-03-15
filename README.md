@@ -9,7 +9,7 @@ ViewControllers are lazily instantiated the first time it gets activated.
 
 An item gets automatically selected if the user stop scrolling, or the user can tap an element o select it.
 
-![MultiPageViewController Image](http://i.makeagif.com/media/11-08-2016/_mrVVK.gif)
+![MultiPageViewController Image](example.gif)
 
 ## Example
 
