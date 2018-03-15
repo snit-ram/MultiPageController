@@ -1,16 +1,16 @@
 PODS:
-  - MultiPageController (0.2.0)
+  - MultiPageController (0.2.2)
 
 DEPENDENCIES:
   - MultiPageController (from `../`)
 
 EXTERNAL SOURCES:
   MultiPageController:
-    :path: "../"
+    :path: ../
 
 SPEC CHECKSUMS:
-  MultiPageController: 95e978fe50ccd3e333201fb586edcef1b1ed14ed
+  MultiPageController: 222e139d642d6017936e4352352be009e6e134d8
 
 PODFILE CHECKSUM: d4da42bbbcf6beff1a427ff80d337f35a50a5cfd
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.3.1
